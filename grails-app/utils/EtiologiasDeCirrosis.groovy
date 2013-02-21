@@ -1,0 +1,4 @@
+
+enum EtiologiasDeCirrosis {
+	ALCOHOL, HCV, HBV, AUTOINMUNE, CBP, CEP, HEMOCROMATOSIS, OTRAS
+}

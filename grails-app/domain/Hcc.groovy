@@ -1,0 +1,6 @@
+
+class Hcc {
+	
+	String estadio
+	
+}

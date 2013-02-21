@@ -1,0 +1,6 @@
+
+class ExpansionConAlbumina {
+
+	Float cantidad
+	
+}

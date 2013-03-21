@@ -10,7 +10,7 @@ class ProcedimientoInvasivoSpec extends Specification{
 		expect: 'pasa la validacion'
 			procedimientoInvasivo.validate()
 		where: 
-			accesoVenoso << ['PERIFERICO', 'CENTRAL', null]
+			accesoVenoso << ['periferico', 'central', null]
 	}
 	
 	def 'acceso venoso no se puede llenar con valores distintos a PERIFERICO o CENTRAL'() {
@@ -19,7 +19,7 @@ class ProcedimientoInvasivoSpec extends Specification{
 		expect: 'no pasa la validacion'
 			procedimientoInvasivo.validate() == false
 		where:
-			accesoVenoso << ['PERIFERICOSSS', 'central', 'PEDRO']
+			accesoVenoso << ['PERIFERICOSSS', 'CENTRAL', 'PEDRO']
 	}
 	 
 }

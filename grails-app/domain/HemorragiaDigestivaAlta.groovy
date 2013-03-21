@@ -2,9 +2,10 @@
 class HemorragiaDigestivaAlta {
 
 	Boolean variceral
-	List<Droga> drogas
 	String antibioticoProfilactico
 	TratamientoEndoscopico tratamientoEndoscopico
+	
+	static hasMany = [drogas: Droga] 
 	
 	static constraints = {
 		antibioticoProfilactico inList: ['ciprofloxanina', 'ceftriaxona']

@@ -36,6 +36,8 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.20'
 		compile 'joda-time:joda-time:2.1'
+		compile "org.jadira.usertype:usertype.jodatime:1.9"
+		runtime 'postgresql:postgresql:8.4-702.jdbc3'
     }
 
     plugins {

@@ -1,5 +1,5 @@
+import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
-
 
 class Epicrisis {
 
@@ -10,7 +10,7 @@ class Epicrisis {
 	List<String> medicacionAlIngreso
 	Infeccion infeccion	
 	MotivoIngreso motivoIngreso
-	ProcedimientoInvasivo procesimientoInvasivo
+	ProcedimientoInvasivo procedimientoInvasivo
 	Ascitis ascitis
 	InsuficienciaRenal insuficienciaRenal
 	Hcc hcc
@@ -20,5 +20,6 @@ class Epicrisis {
 	
     static constraints = {
     }
+	
 }
 

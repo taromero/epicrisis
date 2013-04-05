@@ -1,9 +1,20 @@
 
 <html>
 <head>
+	<r:require modules="bootstrap"/>
 	<g:javascript library="jquery"/>
 	<r:require modules="handlers"/>
 	<r:layoutResources />
+	<style>
+		input[type=text] {
+			height: 30px;
+		}
+		
+		.close-red {
+			color:red;
+			opacity:0.35;
+		}
+	</style>
 </head>
 <body>
 
@@ -26,15 +37,19 @@
 			<g:checkBox name="procedimientoInvasivo.uti" value="${epicrisis?.procedimientoInvasivo?.uti}"/>
 		</div>
 		<div>
-			Otros <input type="button" onclick="agregarOtrosAProcedimientoInvasivo()">
-			<ul id='procedimientoInvasivoOtrosUL'>
+			Otros <input type="button" onclick="agregarOtrosAProcedimientoInvasivo()" value="Agregar">
+			<table id='procedimientoInvasivoOtros' class="table table-striped table-bordered table-hover table-condensed">
 				<g:each in="${epicrisis?.procedimientoInvasivo?.otros}" status="i" var="otro">
-					<li id="otros${i}" class="otros">
-						<g:field name='procedimientoInvasivo.otros' value='${otro}'/>
-						<input type="button" onclick="borrarOtrosaPI(${i})"/>
-					</li>
+					<tr id="otros${i}" class="otros">
+						<td>
+							<g:field type="text" name='procedimientoInvasivo.otros' value='${otro}'/>
+						</td>
+						<td>
+							<input type="button" onclick="borrarOtrosaProcedimientoInvasivo(${i})" value="x" class="close close-red"/>
+						</td>
+					</tr>
 				</g:each>
-			</ul>
+			</table>
 		</div>
 	</div>
 	<div style="float:left" name="hemorragiaDigestivaAlta">
@@ -72,23 +87,26 @@
 			</ul>
 		</fieldset>
 		<div>
-			Drogas <input type="button" onclick="agregarDroga()">
-			<table id="drogas">
+			Drogas <input type="button" onclick="agregarDroga()" value="Agregar"/>
+			<table id="drogas" class="table table-striped table-bordered table-hover table-condensed">
 				<thead>
-					<th>Nombre</th>
-					<th>Duracion</th>
+					<tr>
+						<th>Nombre</th>
+						<th>Duracion</th>
+						<th></th>
+					</tr>
 				</thead>
 				<tbody id="drogasTBody">
 					<g:each in="${epicrisis?.hemorragiaDigestivaAlta?.drogas}" status="i" var="droga">
 						<tr class="droga" id="droga${i}">
 							<td>
-								<g:field name="hemorragiaDigestivaAlta.drogas.nombre" value="${droga.nombre}"/>
+								<g:field type="text" name="hemorragiaDigestivaAlta.drogas.nombre" value="${droga.nombre}"/>
 							</td>
 							<td>
-								<g:field name="hemorragiaDigestivaAlta.drogas.duracion" value="${droga.duracion}"/>
+								<g:field type="text" name="hemorragiaDigestivaAlta.drogas.duracion" value="${droga.duracion}"/>
 							</td>
 							<td>
-								<input type="button" onclick="borrarDroga(${i})"/>
+								<input type="button" onclick="borrarDroga(${i})" value="x" class="close close-red"/>
 							</td>
 						</tr>
 					</g:each>

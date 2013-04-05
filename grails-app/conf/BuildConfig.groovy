@@ -22,7 +22,7 @@ grails.project.dependency.resolution = {
         grailsHome()
         grailsCentral()
 
-        mavenLocal()
+//        mavenLocal()
         mavenCentral()
 
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
@@ -43,8 +43,8 @@ grails.project.dependency.resolution = {
     plugins {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.0"
-        runtime ":resources:1.1.6"
-
+		runtime ":resources:1.1.6"
+		
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
@@ -59,6 +59,8 @@ grails.project.dependency.resolution = {
 		test ":spock:0.6"
 		compile ":build-test-data:2.0.3"
 		compile ":twitter-bootstrap:2.3.0"
-		compile ":lesscss-resources:1.3.0.3"
+        
+		compile ":lesscss-resources:1.3.3"
+		
     }
 }

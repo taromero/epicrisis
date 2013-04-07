@@ -13,7 +13,12 @@ class BootStrap {
 
             }
             production {
-            	//Epicrisis.build()
+            	Epicrisis epicrisis = Epicrisis.build(hemorragiaDigestivaAlta: HemorragiaDigestivaAlta.build())
+                epicrisis.hemorragiaDigestivaAlta.drogas = [new Droga('heroina', 3, epicrisis.hemorragiaDigestivaAlta), 
+															new Droga('crack', 10, epicrisis.hemorragiaDigestivaAlta), 
+															new Droga('speedball', 7, epicrisis.hemorragiaDigestivaAlta)] 
+				
+				epicrisis.save(flush: true, failOnError: true)
             }
         }
     }

@@ -14,12 +14,20 @@
 			color:red;
 			opacity:0.35;
 		}
+		select {
+			width: 150px;
+		}
+
+		input.duracion {
+			width: 65px;
+		}
 	</style>
 </head>
 <body>
 
 <g:form method="post" >
-	<div style="float:left" name="procedimientoInvasivo">
+	<div class="row-fluid">
+	<div name="procedimientoInvasivo" class="span3">
 		<div>
 			Acceso Venoso
 			<g:select name="procedimientoInvasivo.accesoVenoso" from="${epicrisis?.procedimientoInvasivo?.constraints?.accesoVenoso?.inList}" value="${epicrisis?.procedimientoInvasivo?.accesoVenoso}"/>
@@ -37,7 +45,7 @@
 			<g:checkBox name="procedimientoInvasivo.uti" value="${epicrisis?.procedimientoInvasivo?.uti}"/>
 		</div>
 		<div>
-			Otros <input type="button" onclick="agregarOtrosAProcedimientoInvasivo()" value="Agregar">
+			Otros <a class="btn" href="javascript:agregarOtrosAProcedimientoInvasivo()"><i class="icon-plus"></i></a>
 			<table id='procedimientoInvasivoOtros' class="table table-striped table-bordered table-hover table-condensed">
 				<g:each in="${epicrisis?.procedimientoInvasivo?.otros}" status="i" var="otro">
 					<tr id="otros${i}" class="otros">
@@ -52,7 +60,7 @@
 			</table>
 		</div>
 	</div>
-	<div style="float:left" name="hemorragiaDigestivaAlta">
+	<div name="hemorragiaDigestivaAlta" class="span4">
 		<div>
 			Variceral
 			<g:checkBox name="hemorragiaDigestivaAlta.variceral" value="${epicrisis?.hemorragiaDigestivaAlta?.variceral}"/>
@@ -87,7 +95,7 @@
 			</ul>
 		</fieldset>
 		<div>
-			Drogas <input type="button" onclick="agregarDroga()" value="Agregar"/>
+			Drogas <a class="btn" href="javascript:agregarDroga()"><i class="icon-plus"></i></a>
 			<table id="drogas" class="table table-striped table-bordered table-hover table-condensed">
 				<thead>
 					<tr>
@@ -103,7 +111,7 @@
 								<g:field type="text" name="hemorragiaDigestivaAlta.drogas.nombre" value="${droga.nombre}"/>
 							</td>
 							<td>
-								<g:field type="text" name="hemorragiaDigestivaAlta.drogas.duracion" value="${droga.duracion}"/>
+								<g:field type="text" name="hemorragiaDigestivaAlta.drogas.duracion" value="${droga.duracion}" class="duracion"/>
 							</td>
 							<td>
 								<input type="button" onclick="borrarDroga(${i})" value="x" class="close close-red"/>
@@ -114,9 +122,10 @@
 			</table>
 		</div>
 	</div>
+</div>
 	<fieldset class="buttons">
-		<g:actionSubmit class="save" action="update" value="guardar" />
-		<g:actionSubmit class="save" action="edit" value="cancelar" />
+		<g:actionSubmit class="save btn btn-success btn-large" action="update" value="guardar" />
+		<g:actionSubmit class="save btn btn-danger btn-large" action="edit" value="cancelar" />
 	</fieldset>
 	<g:hiddenField name="id" value="${epicrisis?.id}" />
 </g:form>

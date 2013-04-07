@@ -44,5 +44,9 @@ function borrarDroga(num) {
 function setearFocusEnSiguienteElemento(){
 	var active = document.activeElement
 	var inputs = $(active).closest('tbody').find(':input');
-  	inputs.eq( inputs.index(active)+ 1 ).focus();
+  	if(inputs.eq( inputs.index(active)+ 1 ).focus().length == 0) { //si estoy en el ultimo tr
+  		var trs = $(active).closest('tbody').find('tr');
+  		trs.eq( trs.length-2 ); //voy al anteultimo tr (el ultimo es el que voy a eliminar)
+  		trs.find(':input').eq(0).focus();
+  	}
 }

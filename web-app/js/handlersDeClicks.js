@@ -36,3 +36,11 @@ function agregarDroga(){
 function borrarDroga(num) {
 	$('#droga' + num).remove()
 }
+
+$('#save').click(function() {
+	$('#aceptarModal').modal();
+});
+
+$('#cancelar').click(function() {
+	$('#cancelarModal').modal();
+});

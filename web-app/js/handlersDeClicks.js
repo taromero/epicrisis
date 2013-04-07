@@ -11,6 +11,7 @@ function agregarOtrosAProcedimientoInvasivo(){
 	$('#procedimientoInvasivoOtros').append('<tr id="otros' + otrosPICounter + '"><td><input type="text" name="procedimientoInvasivo.otros"/></td>' +
 								'<td><input type="button" onclick="borrarOtrosaProcedimientoInvasivo(' + otrosPICounter + ')"' + 
 								'value="x" class="close close-red"/></td></tr>');
+	$('#otros' + otrosPICounter).find(':input').eq(0).focus()
 	otrosPICounter++
 }
 
@@ -28,9 +29,10 @@ function agregarDroga(){
 									'<input type="text" name="hemorragiaDigestivaAlta.drogas.duracion"  class="duracion">' + 
 								'</td>' +
 								'<td>' +
-									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red"/>' +
+									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red borrarDroga"/>' +
 								'</td>' +
 							'</tr>')
+	$('#droga' + drogasCounter).find(':input').eq(0).focus()
 	drogasCounter++
 }
 

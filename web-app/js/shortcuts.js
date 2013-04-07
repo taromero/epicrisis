@@ -1,12 +1,6 @@
-$(function(){	
-	$(document).bind('keydown', 'alt+ctrl+e', agregarDroga);
-	$(document).bind('keydown', 'alt+ctrl+w', bindeoBorrarDroga);
-	$(document).bind('keydown', 'ctrl+return', abrirModalSave);
-	$(document).bind('keydown', 'ctrl+backspace', abrirModalCancelar);
-	$(document).find(':input').bind('keydown', 'alt+ctrl+e', agregarDroga);
-	$(document).find(':input').bind('keydown', 'alt+ctrl+w', bindeoBorrarDroga);
-	$(document).find(':input').bind('keydown', 'ctrl+return', abrirModalSave);
-	$(document).find(':input').bind('keydown', 'ctrl+backspace', abrirModalCancelar);
+$(function(){
+	bindShortcuts($(document));
+	bindShortcuts($(':input'));	
 });
 
 function bindeoBorrarDroga() {
@@ -20,4 +14,11 @@ function abrirModalSave() {
 
 function abrirModalCancelar() {
 	$('#cancelar').click();
+}
+
+function bindShortcuts($element) {
+	$element.bind('keydown', 'alt+ctrl+e', agregarDroga);
+	$element.bind('keydown', 'alt+ctrl+w', bindeoBorrarDroga);
+	$element.bind('keydown', 'ctrl+return', abrirModalSave);
+	$element.bind('keydown', 'ctrl+backspace', abrirModalCancelar);
 }

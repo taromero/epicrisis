@@ -11,7 +11,9 @@ function agregarOtrosAProcedimientoInvasivo(){
 	$('#procedimientoInvasivoOtros').append('<tr id="otros' + otrosPICounter + '"><td><input type="text" name="procedimientoInvasivo.otros"/></td>' +
 								'<td><input type="button" onclick="borrarOtrosaProcedimientoInvasivo(' + otrosPICounter + ')"' + 
 								'value="x" class="close close-red"/></td></tr>');
-	$('#otros' + otrosPICounter).find(':input').eq(0).focus()
+	var nuevoOtro = $('#otros' + otrosPICounter).find(':input').eq(0);
+	nuevoOtro.focus();
+	bindShortcuts(nuevoOtro);
 	otrosPICounter++
 }
 
@@ -32,7 +34,9 @@ function agregarDroga(){
 									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red borrarDroga"/>' +
 								'</td>' +
 							'</tr>')
-	$('#droga' + drogasCounter).find(':input').eq(0).focus()
+	var nuevaDroga = $('#droga' + drogasCounter).find(':input').eq(0);
+	nuevaDroga.focus()
+	bindShortcuts(nuevaDroga);
 	drogasCounter++
 }
 

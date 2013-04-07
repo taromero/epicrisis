@@ -24,7 +24,7 @@ function agregarDroga(){
 								 	'<input type="text" name="hemorragiaDigestivaAlta.drogas.nombre">' + 
 								'</td>' +
 								'<td>' +
-									'<input type="text" name="hemorragiaDigestivaAlta.drogas.duracion">' + 
+									'<input type="text" name="hemorragiaDigestivaAlta.drogas.duracion"  class="duracion">' + 
 								'</td>' +
 								'<td>' +
 									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red"/>' +

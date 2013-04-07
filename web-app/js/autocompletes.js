@@ -1,0 +1,3 @@
+$('.droga').autocomplete({
+	sources: drogasList
+});

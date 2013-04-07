@@ -3,8 +3,12 @@
 <head>
 	<r:require modules="bootstrap"/>
 	<g:javascript library="jquery"/>
-	<r:require modules="handlers"/>
+	<g:javascript library="jquery-ui"/>
+	<r:require modules="application"/>
 	<r:layoutResources />
+	<script type="text/javascript">
+		var drogasList = ${ drogas };
+	</script>
 	<style>
 		input[type=text] {
 			height: 30px;

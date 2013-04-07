@@ -1,9 +1,12 @@
+import grails.converters.JSON
+
 
 class EpicrisisController {
 
 	def edit() {
 		def epicrisisAEditar = Epicrisis.get(params.id)
-		return [epicrisis: epicrisisAEditar]
+		def drogas = Droga.findAll()
+		return [epicrisis: epicrisisAEditar, drogas: drogas as JSON]
 	}
 
 	def update() {

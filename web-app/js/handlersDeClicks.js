@@ -15,7 +15,8 @@ function agregarOtrosAProcedimientoInvasivo(){
 }
 
 function borrarOtrosaProcedimientoInvasivo(num) {
-	$('#otros' + num).remove()
+	setearFocusEnSiguienteElemento();
+	$('#otros' + num).remove();
 }
 
 function agregarDroga(){
@@ -34,5 +35,12 @@ function agregarDroga(){
 }
 
 function borrarDroga(num) {
-	$('#droga' + num).remove()
+	setearFocusEnSiguienteElemento();
+	$('#droga' + num).remove();
+}
+
+function setearFocusEnSiguienteElemento(){
+	var active = document.activeElement
+	var inputs = $(active).closest('tbody').find(':input');
+  	inputs.eq( inputs.index(active)+ 1 ).focus();
 }

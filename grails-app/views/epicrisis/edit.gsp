@@ -128,10 +128,14 @@
 	</div>
 </div>
 	<fieldset class="buttons">
-		<g:actionSubmit class="save btn btn-success btn-large" action="update" value="guardar" />
-		<g:actionSubmit class="save btn btn-danger btn-large" action="edit" value="cancelar" />
+		<input type="button" value="guardar" class="save btn btn-success btn-large" id="save"/>
+		<input type="button" value="cancelar" class="save btn btn-danger btn-large" id="cancelar"/>
+		<g:actionSubmit class="save btn btn-success btn-large" action="update" value="guardar" id="savePosta" style="display:none"/>
+		<g:actionSubmit class="save btn btn-danger btn-large" action="edit" value="cancelar" id="abortPosta" style="display:none"/>
 	</fieldset>
 	<g:hiddenField name="id" value="${epicrisis?.id}" />
+	<g:render template="aceptarModal"/>
+	<g:render template="cancelarModal"/>
 </g:form>
 	<r:layoutResources />
 </body>

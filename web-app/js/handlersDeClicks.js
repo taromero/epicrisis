@@ -50,3 +50,11 @@ function setearFocusEnSiguienteElemento(){
   		trs.find(':input').eq(0).focus();
   	}
 }
+
+$('#save').click(function() {
+	$('#aceptarModal').modal();
+});
+
+$('#cancelar').click(function() {
+	$('#cancelarModal').modal();
+});

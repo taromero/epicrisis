@@ -34,10 +34,10 @@ function agregarDroga(){
 									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red borrarDroga"/>' +
 								'</td>' +
 							'</tr>')
-	var nuevaDroga = $('#droga' + drogasCounter).find(':input').eq(0);
-	nuevaDroga.focus()
+	var nuevaDroga = $('#droga' + drogasCounter).find(':input');
+	nuevaDroga.eq(0).focus();
 	bindShortcuts(nuevaDroga);
-	drogasCounter++
+	drogasCounter++;
 }
 
 function borrarDroga(num) {
@@ -55,10 +55,13 @@ function setearFocusEnSiguienteElemento(){
   	}
 }
 
-$('#save').click(function() {
-	$('#aceptarModal').modal();
-});
+$(function() {
+	$('#save').click(function() {
+		$('#aceptarModal').modal();
+	});
 
-$('#cancelar').click(function() {
-	$('#cancelarModal').modal();
+	$('#cancelar').click(function() {
+		$('#cancelarModal').modal();
+		$('#confirmarCancelacion').focus();
+	});
 });

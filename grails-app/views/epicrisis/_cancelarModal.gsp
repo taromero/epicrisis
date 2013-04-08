@@ -6,6 +6,9 @@
     $('#cerrarCancelarModal').click(function() {
       $('#cancelarModal').modal('hide');
     });
+    $('#cancelarModal').on('shown', function () {
+      $('#confirmarCancelacion').focus();
+    })
   });
 </script>
 

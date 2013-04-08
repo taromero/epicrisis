@@ -6,7 +6,11 @@
     $('#cerrar').click(function() {
       $('#aceptarModal').modal('hide');
     });
+    $('#aceptarModal').on('shown', function () {
+      $('#confirmar').focus();
+    })
   });
+
 </script>
 
 <div class="modal hide fade" id="aceptarModal">

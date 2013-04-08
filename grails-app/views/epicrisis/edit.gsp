@@ -31,7 +31,10 @@
 
 <g:form method="post" >
 	<div class="row-fluid">
-	<div name="procedimientoInvasivo" class="span3">
+	<div name="procedimientoInvasivo" class="span3 container" style="border: 1px solid #ccc;">
+		<blockquote>
+			<strong><p class="lead">Procedimiento Invasivo</p></strong>
+		</blockquote>
 		<div>
 			Acceso Venoso
 			<g:select name="procedimientoInvasivo.accesoVenoso" from="${epicrisis?.procedimientoInvasivo?.constraints?.accesoVenoso?.inList}" value="${epicrisis?.procedimientoInvasivo?.accesoVenoso}"/>
@@ -64,7 +67,10 @@
 			</table>
 		</div>
 	</div>
-	<div name="hemorragiaDigestivaAlta" class="span4">
+	<div name="hemorragiaDigestivaAlta" class="span4 container" style="border: 1px solid #ccc;">
+		<blockquote>
+			<strong><p class="lead">Hemorragia Digestiva Alta</p></strong>
+		</blockquote>
 		<div>
 			Variceral
 			<g:checkBox name="hemorragiaDigestivaAlta.variceral" value="${epicrisis?.hemorragiaDigestivaAlta?.variceral}"/>

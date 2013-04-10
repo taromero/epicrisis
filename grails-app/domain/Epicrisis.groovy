@@ -19,6 +19,7 @@ class Epicrisis {
 	HepatitisAguda hepatitisAguda
 	
     static constraints = {
+		encefalopatiaHepatica nullable:true 
     }
 	
 }

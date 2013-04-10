@@ -10,7 +10,6 @@ class BootStrap {
 															new Droga('speedball', 7, epicrisis.hemorragiaDigestivaAlta)] 
 				
 				epicrisis.save(flush: true, failOnError: true)
-
             }
             production {
             	Epicrisis epicrisis = Epicrisis.build(hemorragiaDigestivaAlta: HemorragiaDigestivaAlta.build())

@@ -12,8 +12,6 @@ class EpicrisisController {
 	def update() {
 		def epicrisisAActualizar = Epicrisis.get(params.id)
 
-		def aux = params.hemorragiaDigestivaAlta
-
 		epicrisisAActualizar.procedimientoInvasivo.properties = params.procedimientoInvasivo
 
 		def dsf = params.hemorragiaDigestivaAlta.drogas
@@ -27,8 +25,18 @@ class EpicrisisController {
 
 		epicrisisAActualizar.hemorragiaDigestivaAlta.properties = params.hemorragiaDigestivaAlta
 
+		parsearEncefalopatiaHepatica(epicrisisAActualizar, params)
+
 		epicrisisAActualizar.save(failOnError: true)
 		redirect(action: 'edit', id: params.id)
+	}
+
+	private parsearEncefalopatiaHepatica(Epicrisis epicrisisAActualizar, params) {
+		if(epicrisisAActualizar.encefalopatiaHepatica == null) {
+			epicrisisAActualizar.encefalopatiaHepatica = new EncefalopatiaHepatica()
+		}
+		epicrisisAActualizar.encefalopatiaHepatica.properties = params.encefalopatiaHepatica
+		epicrisisAActualizar.encefalopatiaHepatica.save(failOnError: true)
 	}
 
 }

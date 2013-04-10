@@ -1,6 +1,6 @@
 $(function(){
 	bindShortcuts($(document));
-	bindShortcuts($(':input'));	
+	bindShortcuts($(':input'));
 });
 
 function bindeoBorrarDroga() {
@@ -17,11 +17,23 @@ function abrirModalCancelar() {
 }
 
 function focusEnSeguienteDiv($element) {
-	$($element.closest('.container').next().find(':input:visible').eq(0)).focus()
+	var $nextContainer = $element.closest('.container').next()
+	var $firstInput = $($nextContainer.find(':input:visible').eq(0));
+	if($firstInput.length == 0) {
+		$($nextContainer.find('.btn').eq(0)).focus();
+	} else {
+		$firstInput.focus()
+	}
 }
 
 function focusEnAnteriorDiv($element) {
-	$($element.closest('.container').prev().find(':input:visible').eq(0)).focus()
+	var $prevContainer = $element.closest('.container').prev()
+	var $firstInput = $($prevContainer.find(':input:visible').eq(0));
+	if($firstInput.length == 0) {
+		$($prevContainer.find('.btn').eq(0)).focus();
+	} else {
+		$firstInput.focus()
+	}
 }
 
 function bindShortcuts($element) { //use recursividad para evitar repeticion de codigo, me recibi de capo

@@ -65,3 +65,7 @@ $(function() {
 		$('#confirmarCancelacion').focus();
 	});
 });
+
+function toggleEHForm() {
+	$('#encefalopatiaHepatica .content').slideToggle()
+}

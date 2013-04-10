@@ -66,6 +66,6 @@ $(function() {
 	});
 });
 
-function toggleEHForm() {
-	$('#encefalopatiaHepatica .content').slideToggle()
+function toggleForm($container) {
+	$container.find('.content').slideToggle()
 }

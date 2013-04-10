@@ -34,6 +34,7 @@
 	<g:render template="procedimientoInvasivo"/>
 	<g:render template="hemorragiaDigestivaAlta"/>
 	<g:render template="encefalopatiaHepatica"/>
+	<g:render template="hcc"/>
 </div>
 	<fieldset class="buttons">
 		<input type="button" value="guardar" class="save btn btn-success btn-large" id="save"/>

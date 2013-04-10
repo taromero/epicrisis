@@ -1,6 +1,6 @@
 <div id="encefalopatiaHepatica" class="span4 container" style="border: 1px solid #ccc;">
 	<blockquote>
-		<strong><p class="lead">Encefalopatia Hepatica <a class="btn" href="javascript:toggleEHForm()"><i class="icon-plus"></i></a></p></strong>
+		<strong><p class="lead">Encefalopatia Hepatica <a class="btn" href="javascript:toggleForm($('#encefalopatiaHepatica'))"><i class="icon-plus"></i></a></p></strong>
 	</blockquote>
 	<div class="content" <g:if test="${ epicrisis?.encefalopatiaHepatica == null }"> style="display:none" </g:if>>
 		<div>

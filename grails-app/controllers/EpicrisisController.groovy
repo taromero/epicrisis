@@ -24,7 +24,8 @@ class EpicrisisController {
 		}
 
 		epicrisisAActualizar.hemorragiaDigestivaAlta.properties = params.hemorragiaDigestivaAlta
-
+		
+		parsearHCC(epicrisisAActualizar, params)
 		parsearEncefalopatiaHepatica(epicrisisAActualizar, params)
 
 		epicrisisAActualizar.save(failOnError: true)
@@ -32,11 +33,23 @@ class EpicrisisController {
 	}
 
 	private parsearEncefalopatiaHepatica(Epicrisis epicrisisAActualizar, params) {
-		if(epicrisisAActualizar.encefalopatiaHepatica == null) {
-			epicrisisAActualizar.encefalopatiaHepatica = new EncefalopatiaHepatica()
+		if(params.encefalopatiaHepatica.values().any { it != '' }) {
+			if(epicrisisAActualizar.encefalopatiaHepatica == null) {
+				epicrisisAActualizar.encefalopatiaHepatica = new EncefalopatiaHepatica()
+			}
+			epicrisisAActualizar.encefalopatiaHepatica.properties = params.encefalopatiaHepatica
+			epicrisisAActualizar.encefalopatiaHepatica.save(failOnError: true)
 		}
-		epicrisisAActualizar.encefalopatiaHepatica.properties = params.encefalopatiaHepatica
-		epicrisisAActualizar.encefalopatiaHepatica.save(failOnError: true)
+	}
+
+	private parsearHCC(Epicrisis epicrisisAActualizar, params) {
+		if(params.hcc.values().any { it != '' }) {
+			if(epicrisisAActualizar.hcc == null) {
+				epicrisisAActualizar.hcc = new Hcc()
+			}
+			epicrisisAActualizar.hcc.properties = params.hcc
+			epicrisisAActualizar.hcc.save(failOnError: true)
+		}
 	}
 
 }

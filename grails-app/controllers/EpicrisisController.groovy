@@ -27,6 +27,7 @@ class EpicrisisController {
 		
 		parsearHCC(epicrisisAActualizar, params)
 		parsearEncefalopatiaHepatica(epicrisisAActualizar, params)
+		parsearInfeccion(epicrisisAActualizar, params)
 
 		epicrisisAActualizar.save(failOnError: true)
 		redirect(action: 'edit', id: params.id)
@@ -50,6 +51,19 @@ class EpicrisisController {
 			epicrisisAActualizar.hcc.properties = params.hcc
 			epicrisisAActualizar.hcc.save(failOnError: true)
 		}
+	}
+
+	private parsearInfeccion(Epicrisis epicrisisAActualizar, params) {
+		if(params.infeccion.values().any { it != '' }) {
+			if(epicrisisAActualizar.infeccion == null) {
+				epicrisisAActualizar.infeccion = new Infeccion()
+			}
+		}
+		epicrisisAActualizar.infeccion.properties = params.infeccion
+		epicrisisAActualizar.infeccion.hemocultivos.properties = params.infeccion.hemocultivos
+		epicrisisAActualizar.infeccion.urocultivo.properties = params.infeccion.urocultivo
+		epicrisisAActualizar.infeccion.ascitis.properties = params.infeccion.ascitis
+		epicrisisAActualizar.infeccion.save(failOnError: true)
 	}
 
 }

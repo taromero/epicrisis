@@ -31,11 +31,12 @@
 
 <g:form method="post" >
 	<div class="row-fluid">
-	<g:render template="procedimientoInvasivo"/>
-	<g:render template="hemorragiaDigestivaAlta"/>
-	<g:render template="encefalopatiaHepatica"/>
-	<g:render template="hcc"/>
-</div>
+		<g:render template="procedimientoInvasivo"/>
+		<g:render template="hemorragiaDigestivaAlta"/>
+		<g:render template="encefalopatiaHepatica"/>
+		<g:render template="hcc"/>
+		<g:render template="infeccion"/>
+	</div>
 	<fieldset class="buttons">
 		<input type="button" value="guardar" class="save btn btn-success btn-large" id="save"/>
 		<input type="button" value="cancelar" class="save btn btn-danger btn-large" id="cancelar"/>

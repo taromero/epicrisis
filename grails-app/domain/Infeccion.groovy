@@ -2,10 +2,15 @@
 class Infeccion {
 
 	String nombre
-	List<String> cultivos
+	List<Cultivo> otrosCultivos
+	Hemocultivo hemocultivos
+	Urocultivo urocultivo
 	String antibioticoUsado
 	Boolean shockSeptico
 	Boolean curacion
-	Ascitis ascitis
+
+	static hasMany = [cultivos: Cultivo]
+	static hasOne = [hemocultivos: Cultivo, urocultivo: Urocultivo,
+					 ascitis: Ascitis]
 	
 }

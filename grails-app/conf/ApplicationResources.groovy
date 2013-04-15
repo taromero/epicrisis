@@ -5,5 +5,6 @@ modules = {
 		resource url:'js/autocompletes.js'
 		resource url:'js/jquery.hotkeys.js'
 		resource url:'js/shortcuts.js'
+		resource url:'js/infeccion.js'
     }
 }

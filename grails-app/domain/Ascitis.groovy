@@ -1,5 +1,5 @@
 
-class Ascitis {
+class Ascitis extends Cultivo{
 	
 	Boolean gasa
 	Float proteinasTotales

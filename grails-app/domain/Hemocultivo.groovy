@@ -1,0 +1,3 @@
+class Hemocultivo extends Cultivo {
+	
+}

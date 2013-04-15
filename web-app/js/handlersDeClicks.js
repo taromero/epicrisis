@@ -57,7 +57,8 @@ function setearFocusEnSiguienteElemento(){
 
 $(function() {
 	$('#save').click(function() {
-		$('#aceptarModal').modal();
+		$('#savePosta').click();
+		//$('#aceptarModal').modal(); para desarrollo deshabilito la confimacion por modal
 	});
 
 	$('#cancelar').click(function() {

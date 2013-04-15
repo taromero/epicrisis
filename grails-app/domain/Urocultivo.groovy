@@ -1,0 +1,3 @@
+class Urocultivo extends Cultivo {
+	
+}

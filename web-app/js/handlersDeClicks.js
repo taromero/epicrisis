@@ -22,29 +22,6 @@ function borrarOtrosaProcedimientoInvasivo(num) {
 	$('#otros' + num).remove();
 }
 
-function agregarDroga(){
-	$('#drogasTBody').append('<tr id="droga' + drogasCounter + '">' + 
-								'<td>' + 
-								 	'<input type="text" name="hemorragiaDigestivaAlta.drogas.nombre">' + 
-								'</td>' +
-								'<td>' +
-									'<input type="text" name="hemorragiaDigestivaAlta.drogas.duracion"  class="duracion">' + 
-								'</td>' +
-								'<td>' +
-									'<input type="button" onclick="borrarDroga(' + drogasCounter + ')" value="x" class="close close-red borrarDroga"/>' +
-								'</td>' +
-							'</tr>')
-	var nuevaDroga = $('#droga' + drogasCounter).find(':input');
-	nuevaDroga.eq(0).focus();
-	bindShortcuts(nuevaDroga);
-	drogasCounter++;
-}
-
-function borrarDroga(num) {
-	setearFocusEnSiguienteElemento();
-	$('#droga' + num).remove();
-}
-
 function setearFocusEnSiguienteElemento(){
 	var active = document.activeElement
 	var inputs = $(active).closest('tbody').find(':input');

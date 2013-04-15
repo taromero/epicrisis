@@ -16,24 +16,35 @@ $(function() {
 });
 
 function agregarCultivo(){
-	$('#otrosCultivosTBody').append('<tr id="otrosCultivos' + cultivosCounter + '">' + 
-								'<td>' + 
-								 	'<input type="text" name="infeccion.otrosCultivos.nombre">' + 
-								'</td>' +
-								'<td>' +
-									'<input type="checkbox" name="infeccion.otrosCultivos.positivo""/>' +
-								'</td>' +
-								'<td>' +
-									'<input type="button" onclick="borrarCultivo(' + cultivosCounter + ')" value="x" class="close close-red"/>' +
-								'</td>' +
-							'</tr>');
-	var nuevacultivo = $('#otrosCultivos' + cultivosCounter).find(':input');
-	nuevacultivo.eq(0).focus();
-	bindShortcuts(nuevacultivo);
-	cultivosCounter++;
+	agregarItem('otrosCultivosTBody', 'otrosCultivos', cultivosCounter, 'borrarCultivo',
+					 [{tipo: 'text', name: 'infeccion.otrosCultivos.nombre'}, 
+						{tipo: 'checkbox', name: 'infeccion.otrosCultivos.positivo'}]);
 }
 
 function borrarCultivo(num) {
+	borrarItem(num, 'otrosCultivos');
+}
+
+function agregarItem(tbodyId, trId, counter, borrarFnName, tds) {
+	var tdsString = '';
+	$(tds).each(function() {
+		tdsString += '<td>' + 
+				 	'<input type="' + this.tipo + '" name="' + this.name + '" class="' + this.cssClass + '">' + 
+				'</td>';
+	});
+	$('#' + tbodyId).append('<tr id="' + trId + counter + '">' + 
+								tdsString +
+								'<td>' +
+									'<input type="button" onclick="' + borrarFnName + '(' + counter + ')" value="x" class="close close-red"/>' +
+								'</td>' +
+							'</tr>');
+	var newItem = $('#' + trId + counter).find(':input');
+	newItem.eq(0).focus();
+	bindShortcuts(newItem);
+	counter++;	
+}
+
+function borrarItem(num, itemId){
 	setearFocusEnSiguienteElemento();
-	$('#otrosCultivos' + num).remove();	
+	$('#' + itemId + num).remove();	
 }
